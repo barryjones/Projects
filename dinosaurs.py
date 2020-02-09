@@ -31,29 +31,52 @@ Tyrannosaurus Rex,2.5,carnivore"""
 lines = str1.split('\n')
 #print(lines)
 
-dinosaurs = []
+#dinosaurs = [] #you didn't tell me I was not using a dictionary!!!
+dinosaurs = dict()
+
 
 for line in lines:
 	items = line.split(',')
 	#print(items)
 	
-	dinosaurs.append({'NAME':items[0], 'LEG_LENGTH':items[1], 'DIET':items[2]})
+	dinosaurs[items[0]] = {
+		'LEG_LENGTH':items[1],
+		'DIET':items[2]
+	}
 
 print(dinosaurs)
 
 
 
+str2 = """Euoplocephalus,1.87,quadrupedal 
+Stegosaurus,1.90,quadrupedal 
+Tyrannosaurus Rex,5.76,bipedal 
+Hadrosaurus,1.4,bipedal 
+Struthiomimus,1.34,bipedal 
+Velociraptor,2.72,bipedal"""
+
+lines = str2.split('\n')
+for line in lines:
+	items = line.split(',')
+	#print(items)
+	dinosaurs[items[0]]['STRIDE_LENGTH'] = items[1] #these two lines took some thinking!
+	dinosaurs[items[0]]['STANCE'] = items[2]
+	
+ 	
+print(dinosaurs)
+
+#find item in dinosaurs dict and then append extra information
+
+#find item in dinosaurs
 
 
 
 
-str2 = """# NAME,STRIDE_LENGTH,STANCE 
-# Euoplocephalus,1.87,quadrupedal 
-# Stegosaurus,1.90,quadrupedal 
-# Tyrannosaurus Rex,5.76,bipedal 
-# Hadrosaurus,1.4,bipedal 
-# Struthiomimus,1.34,bipedal 
-# Velociraptor,2.72,bipedal"""
+
+
+
+
+
 
 
 
